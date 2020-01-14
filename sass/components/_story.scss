@@ -1,0 +1,77 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    background-color: rgba($color-white, .6);
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    border-radius: .5rem;
+    padding: 6rem;
+    padding-left: 9rem; // to include the translatedX figure
+    font-size: $main-font-size;
+    transform: skewX(-12deg);
+
+
+    // to select all the direct childs and skew them back
+    // however this is not going to work because the shape have already one tranfrom
+    // and here we are applying another, and only one can be applied
+    // & > * {
+    //     transform: skewX(12deg);
+    // }
+
+    &__img {
+        // flexible images always need a defined width
+        // because the parent __shape have a defined width we can say
+        height: 100%;
+        transform: translateX(-4rem) scale(1.3);
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        // to round the text surrounding the figure
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        // to round the figure
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        // to add a margin between the figure and the text
+        // we have added skew here becasue only one transform allowed
+        transform: translateX(-3rem) skewX(12deg); 
+        position: relative;
+    }
+
+    &__caption {
+        font-size: $main-font-size;
+        color: $color-white;
+        text-transform: uppercase;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        transition: all .5s;
+        // to fix the movement glitch
+        backface-visibility: hidden;
+
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        // another property for bluring, brightness and more
+        filter: blur(.3rem) brightness(80%);
+    }
+
+}
+
