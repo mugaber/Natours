@@ -498,6 +498,49 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
+.footer {
+  background-color: #333;
+  padding: 15rem 0;
+  color: #f7f7f7; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+    .footer__logo-box {
+      text-align: center;
+      margin-bottom: 5rem; }
+  .footer__navigation {
+    border-top: 2px solid #f7f7f7;
+    padding-top: 1rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block;
+    font-size: 1.4rem; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link {
+    transition: all 0.3s;
+    padding: 0.4rem; }
+    .footer__link:link, .footer__link:visited {
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #f7f7f7; }
+    .footer__link:active, .footer__link:hover {
+      color: #55c57a;
+      transform: scale(1.25);
+      border-radius: 1rem;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); }
+  .footer__copyright {
+    border-top: 2px solid #f7f7f7;
+    padding-top: 1rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    width: 90%;
+    float: right; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
